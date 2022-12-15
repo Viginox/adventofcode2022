@@ -9,6 +9,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+    "time"
 )
 
 type Position struct {
@@ -380,7 +381,11 @@ func main() {
 	limits := getGridSize(sensors)
 	fmt.Printf("Limits are: %v\n", limits)
 	grid := Grid{}
-
+    
+    start := time.Now()
 	solve1(grid, limits, sensors, 2000000)
+    fmt.Printf("Solution 1 took %s\n", time.Since(start))
+    start = time.Now()
     solve2(limits, sensors, 0, 4000000)
+    fmt.Printf("Solution 2 took %s\n", time.Since(start))
 }
