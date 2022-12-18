@@ -296,17 +296,8 @@ func solve2(jet_directions []rune, rocks_to_drop int) (int) {
                 break
             }
         }
-        fmt.Printf("Dropped rocks: %d\r", count)
-        if cave.JetIndex == 0 {
-            fmt.Println(rock.Shape)
-        }
-        if rock.ShapeEquals(RockShapes[0]) && cave.JetIndex == 0 && count != 0 {
-            break
-        }
         count++
     }
-    fmt.Println()
-    return count
 }
 
 func main() {
